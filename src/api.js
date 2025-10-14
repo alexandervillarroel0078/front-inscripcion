@@ -83,3 +83,10 @@ export async function getQueueStatus() {
   if (!res.ok) throw new Error("Error al consultar estado de la cola");
   return res.json();
 }
+
+// ✅ Consultar estado de una transacción de inscripción (nuevo endpoint)
+export async function getEstadoTransaccionInscripcion(id) {
+  const res = await fetch(`${API_BASE}/inscripciones/estado-transaccion/${id}`);
+  if (!res.ok) throw new Error("Error al obtener estado de la transacción de inscripción");
+  return res.json();
+}
