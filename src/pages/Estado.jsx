@@ -29,50 +29,26 @@ export default function Estado() {
 
         const estadoInsc = data.estadoInscripcion?.toUpperCase();
 
-        // if (estadoInsc === "CONFIRMADA") {
-        //   setEstado("success");
-        //   setMensaje(`✅ Confirmado: Inscripción completada (ID: ${data.id.slice(0, 8)}...)`);
-        //   clearInterval(interval);
-        //   // } else if (estadoInsc === "RECHAZADA") {
-        //   //   setEstado("error");
-        //   //   setMensaje(`❌ Rechazado: Sin cupos o error de inscripción (ID: ${data.id.slice(0, 8)}...)`);
-        //   //   clearInterval(interval);
-        // } else if (estadoInsc === "RECHAZADA") {
-        //   setEstado("error");
-
-        //   // Si el backend envía mensajeError, úsalo, sino muestra el mensaje genérico
-        //   const mensajeError =
-        //     data.mensajeError || "Sin cupos o error de inscripción";
-
-        //   setMensaje(`❌ ${mensajeError} (ID: ${data.id?.slice(0, 8)}...)`);
-        //   clearInterval(interval);
-
-        // } else if (estadoInsc === "PARCIAL") {
-        //   setEstado("pending");
-        //   setMensaje("⚠️ Parcial: Algunas materias sin cupo todavía...");
-        // } else {
-        //   setMensaje(`⌛ Estado actual: ${estadoInsc}...`);
-        // }
         if (estadoInsc === "CONFIRMADA") {
-  setEstado("success");
-  setMensaje(`✅ Confirmado: Inscripción completada (ID: ${data.id.slice(0, 8)}...)`);
-  clearInterval(interval);
-} else if (estadoInsc === "RECHAZADA") {
-  setEstado("error");
-  const mensajeError =
-    data.mensajeError || "Sin cupos o error de inscripción";
-  setMensaje(`❌ ${mensajeError} (ID: ${data.id?.slice(0, 8)}...)`);
-  clearInterval(interval);
-} else if (estadoInsc === "PARCIAL") {
-  setEstado("warning");
-  const mensajeError = data.mensajeError
-    ? `⚠️ Parcial: ${data.mensajeError}`
-    : "⚠️ Parcial: algunas materias no pudieron inscribirse.";
-  setMensaje(mensajeError);
-  clearInterval(interval);
-} else {
-  setMensaje(`⌛ Estado actual: ${estadoInsc}...`);
-}
+          setEstado("success");
+          setMensaje(`✅ Confirmado: Inscripción completada (ID: ${data.id.slice(0, 8)}...)`);
+          clearInterval(interval);
+        } else if (estadoInsc === "RECHAZADA") {
+          setEstado("error");
+          const mensajeError =
+            data.mensajeError || "Sin cupos o error de inscripción";
+          setMensaje(`❌ ${mensajeError} (ID: ${data.id?.slice(0, 8)}...)`);
+          clearInterval(interval);
+        } else if (estadoInsc === "PARCIAL") {
+          setEstado("warning");
+          const mensajeError = data.mensajeError
+            ? `⚠️ Parcial: ${data.mensajeError}`
+            : "⚠️ Parcial: algunas materias no pudieron inscribirse.";
+          setMensaje(mensajeError);
+          clearInterval(interval);
+        } else {
+          setMensaje(`⌛ Estado actual: ${estadoInsc}...`);
+        }
 
       } catch (err) {
         setMensaje("⚠️ Error de conexión. Reintentando...");
