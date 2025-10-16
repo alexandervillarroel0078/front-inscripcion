@@ -1,0 +1,7 @@
+npm run dev
+
+
+
+docker run --rm -v "${PWD}:/app" -w /app --network tareatopicos_default mcr.microsoft.com/dotnet/sdk:8.0 `
+dotnet ef database update --connection "Host=postgres_db;Port=5432;Database=universidad;Username=postgres;Password=1234"
+docker exec -it postgres_db psql -U postgres -d universidad -c "\dt"

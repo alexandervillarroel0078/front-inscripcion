@@ -72,7 +72,7 @@ export default function Home() {
 
           <nav style={{ marginTop: "1rem" }}>
             <Link to="/materias" className="btn">📚 Materias</Link>
-            <Link to="/estado" className="btn">📋 Estado Inscripción</Link>
+            <Link to="/historial" className="btn">📋 historial Inscripción</Link>
           </nav>
 
           <button onClick={handleLogout} className="btn" style={{ marginTop: "1.5rem" }}>
